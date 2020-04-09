@@ -22,13 +22,6 @@ The package should include a class that which should be the return value of  `pa
 class Kontonummer {
   constructor (sortingCode: string | number, accountNumber: string | number, options?: InitOptions)
   constructor (sortingCodeAndAccountNumber: string | number, options?: InitOptions)
-
-  readonly bankName: string
-  readonly sortingCode: string
-  readonly accountNumber: string
-  readonly type: 1 | 2
-  readonly comment: 1 | 2 | 3
-  readonly valid: boolean // only relevant in `lax` mode
 }
 ```
 
@@ -50,6 +43,21 @@ class Kontonummer {
 
 - `lax: boolean`
   - If set to true the constructor should not throw if given an `accountNumber` where the check digit can't be validated. This is to accommodate for some old account numbers that does not have a check digit (Swedbank and some others)
+
+### Properties
+
+The class should expose the folowing properties once initialised
+
+```typescript
+class Kontonummer {
+  readonly bankName: string
+  readonly sortingCode: string
+  readonly accountNumber: string
+  readonly type: 1 | 2
+  readonly comment: 1 | 2 | 3
+  readonly valid: boolean // only relevant in `lax` mode
+}
+```
 
 ### Errors
 
