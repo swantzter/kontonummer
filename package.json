@@ -1,11 +1,11 @@
 {
   "name": "kontonummer",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A validator for swedish banking numbers",
   "main": "dist/src/index.js",
   "scripts": {
     "test": "nyc mocha **.test.(ts|js)",
-    "lint": "standardx --verbose {src,lib}/**/*.{js,ts}",
+    "lint": "standardx --verbose **/*.{js,ts}",
     "build:ts": "tsc",
     "build:js": "babel dist -d dist",
     "build": "npm run build:ts && npm run build:js"
@@ -21,9 +21,6 @@
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
     "babel-plugin-add-module-exports": "^1.0.2",
-    "mocha": "^7.1.1",
-    "nyc": "^15.0.1",
-    "snazzy": "^8.0.0",
     "standardx": "^5.0.0",
     "typescript": "^3.8.3"
   },
