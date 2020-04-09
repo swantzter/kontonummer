@@ -7,6 +7,7 @@ This is a reimagination of [jop-io/kontonummer.js](https://github.com/jop-io/kon
 - Provide an npm package with cjs and esm modules for easy use with node and bundlers.
 - Provide TypeScript definitions
 - Provide a similar API to [Personnummer](https://personnummer.dev)
+- Stretch goal: Calculate IBAN (and BIC/SWIFT-code)
 
 Some Code (c) [Jonas Persson](https://github.com/jop-io) and[Tobbe](https://github.com/Tobbe) which they have gracefully released under a MIT license. See [LICENCE](/svbeon/kontonummer/blob/master/LICENSE)
 
