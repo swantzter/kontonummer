@@ -9,7 +9,7 @@ This is a reimagination of [jop-io/kontonummer.js](https://github.com/jop-io/kon
 - Provide a similar API to [Personnummer](https://personnummer.dev)
 - Stretch goal: Calculate IBAN (and BIC/SWIFT-code)
 
-Some Code (c) [Jonas Persson](https://github.com/jop-io) and[Tobbe](https://github.com/Tobbe) which they have gracefully released under a MIT license. See [LICENCE](/svbeon/kontonummer/blob/master/LICENSE)
+Some Code (c) [Jonas Persson](https://github.com/jop-io) and [Tobbe Lundberg](https://github.com/Tobbe) which they have gracefully released under a MIT license. See [LICENCE](/svbeon/kontonummer/blob/master/LICENSE)
 
 This implementation is written in TypeScript but the following specification should be applicable to other languages as well. But some minor modifications may be required
 
@@ -124,5 +124,6 @@ brackets marks optional
 
 ### Account Number
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjcxMDcxNSwxNzE2NTA3ODUxXX0=
+eyJoaXN0b3J5IjpbLTE3OTM0NTkzNjIsLTExMjcxMDcxNSwxNz
+E2NTA3ODUxXX0=
 -->
