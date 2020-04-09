@@ -1,0 +1,42 @@
+{
+  "name": "kontonummer",
+  "version": "1.0.0",
+  "description": "A validator for swedish banking numbers",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "test": "nyc mocha **.test.(ts|js)",
+    "lint": "standardx --verbose {src,lib}/**/*.{js,ts}",
+    "build:ts": "tsc",
+    "build:js": "babel dist -d dist",
+    "build": "npm run build:ts && npm run build:js"
+  },
+  "author": "Svante Bengtson <svante@swantzter.se> (https://swantzter.se)",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.1",
+    "snazzy": "^8.0.0",
+    "standardx": "^5.0.0",
+    "typescript": "^3.8.3"
+  },
+  "eslintConfig": {
+    "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "error"
+    }
+  },
+  "standardx": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint/eslint-plugin"
+    ]
+  }
+}
