@@ -42,8 +42,8 @@ class Kontonummer {
 
 ### `InitOptions`
 
-- `lax: boolean`
-  - If set to true the constructor should not throw if given an `accountNumber` where the check digit can't be validated. This is to accommodate for some old account numbers that does not have a check digit (Swedbank and some others)
+- `mode: 'strict' | 'lax'`
+  - If set to `lax` the constructor should not throw if given an `accountNumber` where the check digit can't be validated. This is to accommodate for some old account numbers that does not have a check digit (Swedbank  it should default to `strict`
 
 ### Properties
 
@@ -92,7 +92,7 @@ class Kontonummer {
       new Kontonummer(sortingCode, accountNumber)
       return true
     } catch {
-      return fals
+      return false
     }
   }
 }
@@ -124,5 +124,5 @@ brackets marks optional
 
 ### Account Number
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcxNjUwNzg1MV19
+eyJoaXN0b3J5IjpbLTExMjcxMDcxNSwxNzE2NTA3ODUxXX0=
 -->
