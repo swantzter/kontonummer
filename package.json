@@ -24,6 +24,9 @@
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
     "babel-plugin-add-module-exports": "^1.0.2",
+    "commitizen": "^4.0.4",
+    "cz-conventional-changelog": "^3.1.0",
+    "husky": "^4.2.5",
     "mocha": "^7.1.1",
     "nyc": "^15.0.1",
     "standardx": "^5.0.0",
@@ -33,7 +36,11 @@
   "eslintConfig": {
     "rules": {
       "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": "error"
+      "@typescript-eslint/no-unused-vars": "error",
+      "no-useless-constructor": "off",
+      "@typescript-eslint/no-useless-constructor": "error",
+      "no-dupe-class-members": "off",
+      "@typescript-eslint/no-dupe-class-members": "error"
     }
   },
   "standardx": {
@@ -41,5 +48,10 @@
     "plugins": [
       "@typescript-eslint/eslint-plugin"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
