@@ -1,6 +1,7 @@
 # Kontonummer
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+![build](https://github.com/svbeon/kontonummer/workflows/build/badge.svg)
 
 This is a reimagination of [jop-io/kontonummer.js](https://github.com/jop-io/kontonummer.js) with some additional goals:
 
