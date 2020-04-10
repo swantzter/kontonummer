@@ -1,45 +1,51 @@
+import { SortingCodeInfo } from './banks'
+type modFunction = (number: string | number) => boolean
 
-// export type validateFunction = (clearing: string, account: string) => boolean
-// type modFunction = (number: string | number) => boolean
+export const mod10: modFunction = (number) => {
+  number = `${number}`.substr(-10).padStart(10, '0') // pad not strictly neccesary here, but makes it clear and means we get O(n) operations
 
-// export const mod10: modFunction = (number) => {
+  let len = number.length
+  let bit = 1
+  let sum = 0
+  let val: number
+  const arr = [0, 2, 4, 6, 8, 1, 3, 5, 7, 9]
 
-//   number = `${number}`
+  while (len) {
+    val = parseInt(number.charAt(--len), 10)
+    bit ^= 1
+    sum += bit ? arr[val] : val
+  }
 
-//   let len = number.length
-//   let bit = 1
-//   let sum = 0
-//   let val: number
-//   let arr = [0, 2, 4, 6, 8, 1, 3, 5, 7, 9]
+  return !!sum && sum % 10 === 0
+}
 
-//   while (len) {
-//     val = parseInt(number.charAt(--len), 10)
-//     sum += (bit ^= 1) ? arr[val] : val
-//   }
+export const mod11: modFunction = (number) => {
+  number = `${number}`.substr(-10).padStart(10, '0') // pad not strictly neccesary here, but makes it clear and means we get O(n) operations
 
-//   return sum && sum % 10 === 0
-// }
+  let len = number.length
+  let sum = 0
+  let val: number
+  const weights = [1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+  const arr = weights.splice(weights.length - len, weights.length - (weights.length - len))
 
-// export const mod11: modFunction = (number) => {
-//   number = `${number}`
+  while (len) {
+    val = parseInt(number.charAt(--len), 10)
+    sum += arr[len] * val
+  }
 
-//   let len = number.length
-//   let sum = 0
-//   let val: number
-//   let weights = [1, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-//   let arr = weights.splice(weights.length - len, weights.length - (weights.length - len))
+  return !!sum && sum % 11 === 0
+}
 
-//   while (len) {
-//     val = parseInt(number.charAt(--len), 10)
-//     sum += arr[len] * val
-//   }
+export default (type: SortingCodeInfo['type'], comment: SortingCodeInfo['comment'], sortingCode: string, accountNumber: string) => {
+  // 1:1 => mod11 on 3 last of clearng + whole account number
+  if (type === 1 && comment === 1) return mod11(`${sortingCode.substring(1)}${accountNumber.padStart(7, '0')}`)
+  // 1:2 => mod 11 on whole clearing + whole account number
+  if (type === 1 && comment === 2) return mod11(`${sortingCode}${accountNumber.padStart(7, '0')}`)
 
-//   return sum && sum % 11 === 0
-// }
-
-// export default (type: BankInfo['type'], comment: BankInfo['comment']): validateFunction => (clearing, account) => {
-//   return type === 1 && comment === 1 ? mod11((clearing + account).substr(-10)) :
-//     type === 1 && comment === 2 ? mod11((clearing + account)) :
-//       type === 2 && comment === 2 ? mod11(account) :
-//         mod10(account) && (clearing.charAt(0) === "8" ? mod10(clearing) : true)
-// }
+  // 2:2 => mod11 on whole account number (SHB) 9 digits
+  if (type === 2 && comment === 2) return mod11(`${accountNumber.padStart(9, '0')}`)
+  // 2:3:8xxx-x => mod10 on whole sorting Code and separate mod10 on whole account number
+  if (sortingCode.startsWith('8')) return mod10(sortingCode) && mod10(accountNumber)
+  // 2:1 & 2:3 => mod10 on whole account number
+  return mod10(accountNumber.padStart(10, '0'))
+}
