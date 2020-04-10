@@ -88,9 +88,6 @@
       ],
       [
         "@pika/plugin-bundle-web"
-      ],
-      [
-        "pika-plugin-typedefs-to-flow"
       ]
     ]
   }
