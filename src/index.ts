@@ -37,6 +37,7 @@ export default class Kontonummer {
     // acoountNumber
     if (typeof accountOrOptions === 'object') {
       options = accountOrOptions
+      accountNumber = sortingCodeWithOrWithoutAccountNumber.substring(sortingCodeWithOrWithoutAccountNumber.startsWith('8') ? 5 : 4)
     } else if (typeof accountOrOptions === 'string' || typeof accountOrOptions === 'number') {
       accountNumber = `${accountOrOptions}`.replace(/[^\d]/g, '')
     } else {
@@ -67,12 +68,14 @@ export default class Kontonummer {
 
     this.#sortingCode = sortingCode
     this.#accountNumber = accountNumber
+    this.#valid = true
   }
 
   public static parse(sortingCodeAndAccountNumber: string | number, options?: InitOptions): Kontonummer
   public static parse(sortingCode: string | number, accountNumber: string | number, options?: InitOptions): Kontonummer
   public static parse(sortingCodeWithOrWithoutAccountNumber: string | number, accountOrOptions?: string | number | InitOptions, options?: InitOptions) {
-    return new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountOrOptions, options)
+    if (typeof accountOrOptions === 'string' || typeof accountOrOptions === 'number') return new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountOrOptions, options)
+    else return new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountOrOptions)
   }
 
   public static valid(sortingCodeAndAccountNumber: string | number): boolean
@@ -80,7 +83,8 @@ export default class Kontonummer {
   public static valid(sortingCodeWithOrWithoutAccountNumber: string | number, accountNumber?: string | number) {
     if (accountNumber && (typeof accountNumber !== 'string' || typeof accountNumber !== 'number')) throw new KontonummerError('Kontonummer.valid() does not accept an options argument')
     try {
-      new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountNumber)
+      if (accountNumber) new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountNumber)
+      else new Kontonummer(sortingCodeWithOrWithoutAccountNumber)
       return true
     } catch {
       return false
