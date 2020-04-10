@@ -154,6 +154,7 @@ class Kontonummer {
 | separated | `S[C],AC` |
 | separated-check | `S[-C],A-C` |
 | grouped | TBD|
+
 brackets marks optional
 
 ## Formats (Types and "Comments")
