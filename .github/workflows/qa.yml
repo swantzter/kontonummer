@@ -1,54 +1,37 @@
 name: qa
 
-on:
-  push:
-    branches: [ master ]
+on: [push, pull_request]
 
 jobs:
   lint:
-
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Cache
-      uses: actions/cache@v1.1.2
-      with:
-        # A directory to store and save the cache
-        path: node_modules 
-        # An explicit key for restoring and saving the cache
-        key: ${{ runner.os }}-pnode-modules
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run lint
-      
+      - uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/cache@v1.1.2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm run lint
+
   test:
-
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Cache
-      uses: actions/cache@v1.1.2
-      with:
-        # A directory to store and save the cache
-        path: node_modules 
-        # An explicit key for restoring and saving the cache
-        key: ${{ runner.os }}-pnode-modules
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm t
+      - uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/cache@v1.1.2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm t

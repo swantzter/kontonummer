@@ -3,3 +3,4 @@ dist
 .vscode
 .nyc_output
 coverage
+pkg
