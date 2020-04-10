@@ -14,16 +14,16 @@ export default class Kontonummer {
   #comment: 1 | 2 | 3
   #valid: boolean // only relevant in `lax` mode
 
-  get bankName() { return this.#bankName }
-  get sortingCode() { return this.#sortingCode }
-  get accountNumber() { return this.#accountNumber }
-  get type() { return this.#type }
-  get comment() { return this.#comment }
-  get valid() { return this.#valid }
+  get bankName () { return this.#bankName }
+  get sortingCode () { return this.#sortingCode }
+  get accountNumber () { return this.#accountNumber }
+  get type () { return this.#type }
+  get comment () { return this.#comment }
+  get valid () { return this.#valid }
 
   constructor(sortingCodeAndAccountNumber: string | number, options?: InitOptions)
   constructor(sortingCode: string | number, accountNumber: string | number, options?: InitOptions)
-  constructor(sortingCodeWithOrWithoutAccountNumber: string | number, accountOrOptions?: string | number | InitOptions, optionsArg?: InitOptions) {
+  constructor (sortingCodeWithOrWithoutAccountNumber: string | number, accountOrOptions?: string | number | InitOptions, optionsArg?: InitOptions) {
     let accountNumber: string
     let options: InitOptions = {
       mode: 'strict'
@@ -77,14 +77,14 @@ export default class Kontonummer {
 
   public static parse(sortingCodeAndAccountNumber: string | number, options?: InitOptions): Kontonummer
   public static parse(sortingCode: string | number, accountNumber: string | number, options?: InitOptions): Kontonummer
-  public static parse(sortingCodeWithOrWithoutAccountNumber: string | number, accountOrOptions?: string | number | InitOptions, options?: InitOptions) {
+  public static parse (sortingCodeWithOrWithoutAccountNumber: string | number, accountOrOptions?: string | number | InitOptions, options?: InitOptions) {
     if (typeof accountOrOptions === 'string' || typeof accountOrOptions === 'number') return new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountOrOptions, options)
     else return new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountOrOptions)
   }
 
   public static valid(sortingCodeAndAccountNumber: string | number): boolean
   public static valid(sortingCode: string | number, accountNumber: string | number): boolean
-  public static valid(sortingCodeWithOrWithoutAccountNumber: string | number, accountNumber?: string | number) {
+  public static valid (sortingCodeWithOrWithoutAccountNumber: string | number, accountNumber?: string | number) {
     if (accountNumber && (typeof accountNumber !== 'string' || typeof accountNumber !== 'number')) throw new KontonummerError('Kontonummer.valid() does not accept an options argument')
     try {
       if (accountNumber) new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountNumber) // eslint-disable-line no-new
@@ -95,13 +95,13 @@ export default class Kontonummer {
     }
   }
 
-  public static getSortingCodeInfo(sortingCode: string | number): SortingCodeInfo {
+  public static getSortingCodeInfo (sortingCode: string | number): SortingCodeInfo {
     const bank = getSortingCodeInfo(sortingCode)
     if (typeof bank === 'undefined') throw new KontonummerError(`No Bank found with sorting code ${sortingCode}`)
     return bank
   }
 
-  toJSON() {
+  toJSON () {
     return {
       bankName: this.bankName,
       sortingCode: this.sortingCode,
@@ -112,7 +112,7 @@ export default class Kontonummer {
     }
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  [Symbol.for('nodejs.util.inspect.custom')] () {
     return this.toJSON()
   }
 }
