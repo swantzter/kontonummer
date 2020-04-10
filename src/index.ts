@@ -111,6 +111,10 @@ export default class Kontonummer {
       valid: this.valid
     }
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')]() {
+    return this.toJSON()
+  }
 }
 
 export const parse = Kontonummer.parse
