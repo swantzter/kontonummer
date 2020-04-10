@@ -13,26 +13,27 @@ export default class Kontonummer {
   #comment: 1 | 2 | 3
   #valid: boolean // only relevant in `lax` mode
 
-  get bankName() { return this.#bankName }
-  get sortingCode() { return this.#sortingCode }
-  get accountNumber() { return this.#accountNumber }
-  get type() { return this.#type }
-  get comment() { return this.#comment }
-  get valid() { return this.#valid }
+  get bankName () { return this.#bankName }
+  get sortingCode () { return this.#sortingCode }
+  get accountNumber () { return this.#accountNumber }
+  get type () { return this.#type }
+  get comment () { return this.#comment }
+  get valid () { return this.#valid }
 
   constructor(sortingCodeAndAccountNumber: string | number, options?: InitOptions)
   constructor(sortingCode: string | number, accountNumber: string | number, options?: InitOptions)
-  constructor(sortingCodeWithOrWithoutAccountNumber: string | number, accountOrOptions?: string | number | InitOptions, optionsArg?: InitOptions) {
+  constructor (sortingCodeWithOrWithoutAccountNumber: string | number, accountOrOptions?: string | number | InitOptions, optionsArg?: InitOptions) {
     let sortingCode: string
     let accountNumber: string
-    let options: InitOptions = {
-      mode: "strict"
+    let options: InitOptions = { // eslint-disable-line @typescript-eslint/no-unused-vars
+      mode: 'strict'
     }
 
     // parse params
     // sortingCode
     sortingCodeWithOrWithoutAccountNumber = `${sortingCodeWithOrWithoutAccountNumber}`.replace(/[^\d]/g, '')
-    sortingCode = sortingCodeWithOrWithoutAccountNumber.substring(0, sortingCodeWithOrWithoutAccountNumber.startsWith('8') ? 5 : 4) // Swedbank 8xxx-x have 5 digits
+    // Swedbank 8xxx-x have 5 digits
+    sortingCode = sortingCodeWithOrWithoutAccountNumber.substring(0, sortingCodeWithOrWithoutAccountNumber.startsWith('8') ? 5 : 4) // eslint-disable-line prefer-const
 
     // acoountNumber
     if (typeof accountOrOptions === 'object') {
@@ -73,25 +74,25 @@ export default class Kontonummer {
 
   public static parse(sortingCodeAndAccountNumber: string | number, options?: InitOptions): Kontonummer
   public static parse(sortingCode: string | number, accountNumber: string | number, options?: InitOptions): Kontonummer
-  public static parse(sortingCodeWithOrWithoutAccountNumber: string | number, accountOrOptions?: string | number | InitOptions, options?: InitOptions) {
+  public static parse (sortingCodeWithOrWithoutAccountNumber: string | number, accountOrOptions?: string | number | InitOptions, options?: InitOptions) {
     if (typeof accountOrOptions === 'string' || typeof accountOrOptions === 'number') return new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountOrOptions, options)
     else return new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountOrOptions)
   }
 
   public static valid(sortingCodeAndAccountNumber: string | number): boolean
   public static valid(sortingCode: string | number, accountNumber: string | number): boolean
-  public static valid(sortingCodeWithOrWithoutAccountNumber: string | number, accountNumber?: string | number) {
+  public static valid (sortingCodeWithOrWithoutAccountNumber: string | number, accountNumber?: string | number) {
     if (accountNumber && (typeof accountNumber !== 'string' || typeof accountNumber !== 'number')) throw new KontonummerError('Kontonummer.valid() does not accept an options argument')
     try {
-      if (accountNumber) new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountNumber)
-      else new Kontonummer(sortingCodeWithOrWithoutAccountNumber)
+      if (accountNumber) new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountNumber) // eslint-disable-line no-new
+      else new Kontonummer(sortingCodeWithOrWithoutAccountNumber) // eslint-disable-line no-new
       return true
     } catch {
       return false
     }
   }
 
-  public static getSortingCodeInfo(sortingCode: string | number): SortingCodeInfo {
+  public static getSortingCodeInfo (sortingCode: string | number): SortingCodeInfo {
     const bank = getSortingCodeInfo(sortingCode)
     if (typeof bank === 'undefined') throw new KontonummerError(`No Bank found with sorting code ${sortingCode}`)
     return bank

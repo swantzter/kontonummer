@@ -37,193 +37,193 @@ export const banks: SortingCodeInfo[] = [
     bankName: 'Avanza Bank',
     type: 1,
     comment: 2,
-    ranges: [[9550, 9569]],
+    ranges: [[9550, 9569]]
   },
   {
     bankName: 'BlueStep Finans',
     type: 1,
     comment: 1,
-    ranges: [[9680, 9689]],
+    ranges: [[9680, 9689]]
   },
   {
     bankName: 'BNP Paribas SA.',
     type: 1,
     comment: 2,
-    ranges: [[9470, 9479]],
+    ranges: [[9470, 9479]]
   },
   {
     bankName: 'Citibank',
     type: 1,
     comment: 2,
-    ranges: [[9040, 9049]],
+    ranges: [[9040, 9049]]
   },
   {
     bankName: 'Danske Bank',
     type: 1,
     comment: 1,
-    ranges: [[1200, 1399], [2400, 2499]],
+    ranges: [[1200, 1399], [2400, 2499]]
   },
   {
     bankName: 'DNB Bank',
     type: 1,
     comment: 2,
-    ranges: [[9190, 9199], [9260, 9269]],
+    ranges: [[9190, 9199], [9260, 9269]]
   },
   {
     bankName: 'Ekobanken',
     type: 1,
     comment: 2,
-    ranges: [[9700, 9709]],
+    ranges: [[9700, 9709]]
   },
   {
     bankName: 'Erik Penser',
     type: 1,
     comment: 2,
-    ranges: [[9590, 9599]],
+    ranges: [[9590, 9599]]
   },
   {
     bankName: 'Forex Bank',
     type: 1,
     comment: 1,
-    ranges: [[9400, 9449]],
+    ranges: [[9400, 9449]]
   },
   {
     bankName: 'ICA Banken',
     type: 1,
     comment: 1,
-    ranges: [[9270, 9279]],
+    ranges: [[9270, 9279]]
   },
   {
     bankName: 'IKANO Bank',
     type: 1,
     comment: 1,
-    ranges: [[9170, 9179]],
+    ranges: [[9170, 9179]]
   },
   {
     bankName: 'JAK Medlemsbank',
     type: 1,
     comment: 2,
-    ranges: [[9670, 9679]],
+    ranges: [[9670, 9679]]
   },
   {
     bankName: 'Klarna Bank',
     type: 1,
     comment: 2,
-    ranges: [[9780, 9789]],
+    ranges: [[9780, 9789]]
   },
   {
     bankName: 'Landshypotek',
     type: 1,
     comment: 2,
-    ranges: [[9390, 9399]],
+    ranges: [[9390, 9399]]
   },
   {
     bankName: 'Lån & Spar Bank Sverige',
     type: 1,
     comment: 1,
-    ranges: [[9630, 9639]],
+    ranges: [[9630, 9639]]
   },
   {
     bankName: 'Länsförsäkringar Bank',
     type: 1,
     comment: 1,
-    ranges: [[3400, 3499], [9060, 9069]],
+    ranges: [[3400, 3499], [9060, 9069]]
   },
   {
     bankName: 'Länsförsäkringar Bank',
     type: 1,
     comment: 2,
-    ranges: [[9020, 9029]],
+    ranges: [[9020, 9029]]
   },
   {
     bankName: 'Marginalen Bank',
     type: 1,
     comment: 1,
-    ranges: [[9230, 9239]],
+    ranges: [[9230, 9239]]
   },
   {
     bankName: 'MedMera Bank',
     type: 1,
     comment: 2,
-    ranges: [[9650, 9659]],
+    ranges: [[9650, 9659]]
   },
   {
     bankName: 'Nordax Bank',
     type: 1,
     comment: 2,
-    ranges: [[9640, 9649]],
+    ranges: [[9640, 9649]]
   },
   {
     bankName: 'Nordea',
     type: 1,
     comment: 1,
-    ranges: [[1100, 1199], [1400, 2099], [3000, 3299], [3301, 3399], [3410, 3781], [3783, 3999]],
+    ranges: [[1100, 1199], [1400, 2099], [3000, 3299], [3301, 3399], [3410, 3781], [3783, 3999]]
   },
   {
     bankName: 'Nordea',
     type: 1,
     comment: 2,
-    ranges: [[4000, 4999]],
+    ranges: [[4000, 4999]]
   },
   {
     bankName: 'Nordnet Bank',
     type: 1,
     comment: 2,
-    ranges: [[9100, 9109]],
+    ranges: [[9100, 9109]]
   },
   {
     bankName: 'Resurs Bank',
     type: 1,
     comment: 1,
-    ranges: [[9280, 9289]],
+    ranges: [[9280, 9289]]
   },
   {
     bankName: 'Riksgälden',
     type: 1,
     comment: 2,
-    ranges: [[9880, 9889]],
+    ranges: [[9880, 9889]]
   },
   {
     bankName: 'Santander Consumer Bank',
     type: 1,
     comment: 1,
-    ranges: [[9460, 9469]],
+    ranges: [[9460, 9469]]
   },
   {
     bankName: 'SBAB',
     type: 1,
     comment: 1,
-    ranges: [[9250, 9259]],
+    ranges: [[9250, 9259]]
   },
   {
     bankName: 'SEB',
     type: 1,
     comment: 1,
-    ranges: [[5000, 5999], [9120, 9124], [9130, 9149]],
+    ranges: [[5000, 5999], [9120, 9124], [9130, 9149]]
   },
   {
     bankName: 'Skandiabanken',
     type: 1,
     comment: 2,
-    ranges: [[9150, 9169]],
+    ranges: [[9150, 9169]]
   },
   {
     bankName: 'Svea Bank',
     type: 1,
     comment: 2,
-    ranges: [[9660, 9669]],
+    ranges: [[9660, 9669]]
   },
   {
     bankName: 'Swedbank',
     type: 1,
     comment: 1,
-    ranges: [[7000, 7999]],
+    ranges: [[7000, 7999]]
   },
   {
     bankName: 'Ålandsbanken',
     type: 1,
     comment: 2,
-    ranges: [[2300, 2399]],
+    ranges: [[2300, 2399]]
   },
 
   // Type 2 accounts - the messy ones
@@ -293,7 +293,7 @@ export const banks: SortingCodeInfo[] = [
     ranges: [[9300, 9349]],
     accountMinLength: 10,
     accountMaxLength: 10
-  },
+  }
 ]
 
 export default (sortingCode: string | number): SortingCodeInfo | undefined =>
