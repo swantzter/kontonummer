@@ -44,8 +44,6 @@ export default (type: SortingCodeInfo['type'], comment: SortingCodeInfo['comment
 
   // 2:2 => mod11 on whole account number (SHB) 9 digits
   if (type === 2 && comment === 2) return mod11(`${accountNumber.padStart(9, '0')}`)
-  // 2:3:8xxx-x => mod10 on whole sorting Code and separate mod10 on whole account number
-  if (sortingCode.startsWith('8')) return mod10(sortingCode) && mod10(accountNumber)
   // 2:1 & 2:3 => mod10 on whole account number
   return mod10(accountNumber.padStart(10, '0'))
 }

@@ -73,7 +73,7 @@ describe('Kontonummer', () => {
     })
   })
 
-  it.skip('Should throw if the check digit on a 5 digit sorting code ins invalid', () => {
+  it('Should throw if the check digit on a 5 digit sorting code ins invalid', () => {
     // Same account number as 'swedbank5' above, but different clearing number
     throws(() => new Kontonummer('8424-1,983 189 224-6'), {
       name: 'KontonummerError',
