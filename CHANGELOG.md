@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/svbeon/kontonummer/compare/v1.1.0...v1.2.0) (2020-04-12)
+
+
+### Features
+
+* **format:** implement the format method ([ca57a4a](https://github.com/svbeon/kontonummer/commit/ca57a4ab6e1423b1c8f7509394337bc19c982b96))
+
 # [1.1.0](https://github.com/svbeon/kontonummer/compare/v1.0.0...v1.1.0) (2020-04-12)
 
 
