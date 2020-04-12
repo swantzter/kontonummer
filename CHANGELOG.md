@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/svbeon/kontonummer/compare/v1.0.0...v1.1.0) (2020-04-12)
+
+
+### Features
+
+* **kontonummer:** console.log returns the value of the getters ([974086d](https://github.com/svbeon/kontonummer/commit/974086d4f14813288a8e7d40fd5791cefaa56216))
+
 # 1.0.0 (2020-04-10)
 
 
