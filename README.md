@@ -158,7 +158,7 @@ and accountNumber in one string. Some different formats should be available.
 If no argument is provided it should default to `numeric`.
 
 ```typescript
-type Format = 'numeric' | 'separated' | 'separated-check' | 'grouped'
+type Format = 'numeric' | 'pretty'
 
 class Kontonummer {
   format (format?: Format): string
@@ -167,8 +167,8 @@ class Kontonummer {
 
 | Name | Format |
 | ---- | ---- |
-| **numeric** <br/> _(default)_ | `S[C]AC` |
-| magic | Depends on type and bank, see [research](#research) below |
+| **numeric**<br/>_(default)_ | `S[C]AC`<br/>where the account number is padded to the appropriate max length depending on account type |
+| pretty | Depends on type and bank, see [research](#research) below |
 
 <!-- | separated | `S[C],AC` |
 | separated-check | `S[-C],A-C` |
@@ -185,15 +185,18 @@ a sorting code starting with 8 displays an extra 5'th check digit to the sorting
 code. (`SSSS-C`) The check digit is calculated using the mod-10 algorithm
 [[7]](#source-7), [[citation-needed]]() This means that in actual bank
 transactions the check digit is discarded for these accounts and only the first
-four "actually matter". A sorting code needs to be a number between 1000 and 9999. [[3]](#source-3)
+four "actually matter". A sorting code needs to be a number between 1000
+and 9999. [[3]](#source-3)
 
-The sorting code can be used to derive the account type (1 or 2) and the associated "comment" in a publication by Bankgirot. [[1]](#source-1)
+The sorting code can be used to derive the account type (1 or 2) and the
+associated "comment" in a publication by Bankgirot. [[1]](#source-1)
 
 ### Account Number
 
 #### Type 1
 
-Type 1 accounts are the "standard" for swedish bank accounts. Swedish bankers' association are "actively working for increased standardisation on the Swedish
+Type 1 accounts are the "standard" for swedish bank accounts. Swedish bankers'
+association are "actively working for increased standardisation on the Swedish
 market and only allows type 1 for new banks" [[9]](#source-9)
 
 A type 1 account number is 11 digits long, (4 digits for the sorting code and 7
@@ -283,7 +286,8 @@ No new Nordea Personkonto with the holders personal identity number as the
 account number are issued as of 2019-01-01. [[11]](#source-11)
 
 The format for these account numbers are `AAAAAAAAAC`. [[1]](#source-1)
-It stands to reason that the format with separation for readability is the same as for a personal identity number `AAAAAA-AAAC` but do note that only digits
+It stands to reason that the format with separation for readability is the same
+as for a personal identity number `AAAAAA-AAAC` but do note that only digits
 are significant in bank account numbers so the dash (or plus for people older
 than 100) cannot be used to differentiate bank accounts which may men there
 is a risk for collisions. [[citation-needed]]()
@@ -294,7 +298,7 @@ number `AAAAAAAAA`. [[1]](#source-1) Same as for personal identity numbers.
 
 ##### Nordea PlusGirot Account
 
-TODO. There are some decisions to be made regarding this.
+**TODO**. There are some decisions to be made regarding this.
 Should the 2-8 digit format be allowed for validation or only the 10 digit
 longer form. this depends on Bankgirot implementation I think.
 Currently the 2-8 digit numbers do validate and the 10 digit ones do not.
@@ -315,8 +319,8 @@ number `AAAAAAAAA`. [[1]](#source-1)
 Bankgirot is just an "address" to an actual account number whereas PlusGirot
 (formerly PostGirot) is an actual account.
 
-TODO How to handle these? should there be a separate `Kontonummer.BgPg` class
-with a different API? Open for suggestions.
+**TODO** How to handle these? should there be a separate `Kontonummer.BgPg`
+class with a different API? Open for suggestions.
 
 #### PlusGirot
 
@@ -337,13 +341,14 @@ number `AAAAAAA`. [[7]](#source-7)
 
 ### BIC (SWIFT) and IBAN
 
-TODO: research + implement.
+**TODO**: research + implement.
 
 Im imagining a `readonly bic: string`property and a `.format('iban')`.
 
 Swedish IBAN numbers are 24 digits long and has the format
 `[SE]KK BBBA AAAA AAAA AAAA AAAA`
-(letters wrapped in `[]` are "escaped" i.e static and not a placeholder) [[4]](#source-4)
+(letters wrapped in `[]` are "escaped" i.e static and not a placeholder)
+[[4]](#source-4)
 
 The bank codes and BIC codes are assigned by the swedish bankers' association.
 [[2]](#source-2)

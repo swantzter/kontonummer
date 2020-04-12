@@ -1,7 +1,9 @@
-import getSortingCodeInfo, { BankName, SortingCodeInfo } from './banks'
+import getSortingCodeInfo from './banks'
 import { KontonummerError } from './errors'
-import validateCheckDigit from './validate'
+import validateCheckDigit, { mod10 } from './validate'
+import formatter, { Format } from './format'
 
+import type { BankName, SortingCodeInfo } from './banks'
 interface InitOptions {
   mode: 'strict' | 'semi' | 'lax'
 }
@@ -35,7 +37,7 @@ export default class Kontonummer {
     // Swedbank 8xxx-x have 5 digits
     const sortingCode = sortingCodeWithOrWithoutAccountNumber.substring(0, sortingCodeWithOrWithoutAccountNumber.startsWith('8') ? 5 : 4)
 
-    // acoountNumber
+    // accountNumber
     if (typeof accountOrOptions === 'object') {
       options = accountOrOptions
       accountNumber = sortingCodeWithOrWithoutAccountNumber.substring(sortingCodeWithOrWithoutAccountNumber.startsWith('8') ? 5 : 4)
@@ -51,7 +53,7 @@ export default class Kontonummer {
     }
 
     // validate arguments
-    if (sortingCode.length < 4) {
+    if (sortingCode.length < 4 || (sortingCode.length > 4 ? !mod10(sortingCode) : false)) {
       throw new KontonummerError('Invalid sorting code')
     }
 
@@ -73,6 +75,10 @@ export default class Kontonummer {
     this.#sortingCode = sortingCode
     this.#accountNumber = accountNumber
     this.#valid = valid
+  }
+
+  format (format: Format) {
+    return formatter(this.sortingCode, this.accountNumber, Kontonummer.getSortingCodeInfo(this.sortingCode), format)
   }
 
   public static parse(sortingCodeAndAccountNumber: string | number, options?: InitOptions): Kontonummer

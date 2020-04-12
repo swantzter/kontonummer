@@ -5,12 +5,12 @@ interface SortingCodeBase {
   ranges: Array<[number, number]> // [min, max] inclusive ranges
 }
 
-interface Type1Account extends SortingCodeBase {
+export interface Type1Account extends SortingCodeBase {
   type: 1
   comment: 1 | 2
 }
 
-interface Type2Account extends SortingCodeBase {
+export interface Type2Account extends SortingCodeBase {
   type: 2
   comment: 1 | 2 | 3
   accountMinLength?: number
