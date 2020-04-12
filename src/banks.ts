@@ -1,5 +1,3 @@
-// TODO: investigate https://www.dbschenker.com/se-sv/haer-ser-du-hur-kontonumret-ska-skrivas-foer-olika-banker-481736
-
 export type SortingCodeInfo = Type1Account | Type2Account
 
 interface SortingCodeBase {
@@ -252,8 +250,6 @@ export const banks: SortingCodeInfo[] = [
     accountMaxLength: 10
   },
   {
-    // TODO: verify length
-    // 2-8 digits source: https://www.samlogic.com/blogg/2012/11/kontroll-validering-av-bankgironummer-och-plusgironummer/
     bankName: 'Nordea Plusgirot',
     type: 2,
     comment: 3,
@@ -281,8 +277,8 @@ export const banks: SortingCodeInfo[] = [
     bankName: 'Swedbank',
     type: 2,
     comment: 3,
+    // TODO: only use 4 digits for lookup
     ranges: [[8000, 8999], [80000, 89999]], // adding an extra 5-digit case to catch their 5 digit sorting codes
-    // regex: /^8[0-9]{10,14}$/
     accountMinLength: 10, // source: https://www.swedbank.se/privat/kort-och-betala/konton-for-in-och-utbetalningar/clearingnummer.html
     accountMaxLength: 11 // Allowing 11 here in case clearingnumber is sent as the first four instead of the first five
   },
