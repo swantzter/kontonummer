@@ -278,7 +278,7 @@ export const banks: SortingCodeInfo[] = [
     type: 2,
     comment: 3,
     // TODO: only use 4 digits for lookup
-    ranges: [[8000, 8999], [80000, 89999]], // adding an extra 5-digit case to catch their 5 digit sorting codes
+    ranges: [[8000, 8999]], // adding an extra 5-digit case to catch their 5 digit sorting codes
     accountMinLength: 10, // source: https://www.swedbank.se/privat/kort-och-betala/konton-for-in-och-utbetalningar/clearingnummer.html
     accountMaxLength: 11 // Allowing 11 here in case clearingnumber is sent as the first four instead of the first five
   },
@@ -296,7 +296,9 @@ export default (sortingCode: string | number): SortingCodeInfo | undefined =>
   banks.find(
     bank =>
       bank.ranges.some(
-        ([min, max]) =>
-          Number(sortingCode) >= min &&
-          Number(sortingCode) <= max
+        ([min, max]) => {
+          const sortingCodeNumber = Number(`${sortingCode}`.replace(/[^\d]/g, '').substring(0, 4))
+          return sortingCodeNumber >= min &&
+            sortingCodeNumber <= max
+        }
       ))
