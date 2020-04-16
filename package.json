@@ -4,7 +4,7 @@
   "description": "A validator for swedish banking numbers",
   "main": "dist/src/index.js",
   "scripts": {
-    "test": "nyc -r lcov -r text -e .ts -x test/**/* mocha -r ts-node/register -r test/babel-register.js test/**/*.test.ts",
+    "test": "BABEL_ENV=test nyc -r lcov -r text -e .ts -x test/**/* mocha -r ts-node/register -r test/babel-register.js test/**/*.test.ts",
     "lint": "standardx --verbose **/*.{js,ts}",
     "build": "pika build",
     "semantic-release": "semantic-release"
