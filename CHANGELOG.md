@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/svbeon/kontonummer/compare/v1.2.0...v1.3.0) (2020-04-16)
+
+
+### Features
+
+* **banks:** always use 4 digit sortingCode for bank lookup ([1ceb351](https://github.com/svbeon/kontonummer/commit/1ceb35110926bd82572ba42610db409cc019bc6c))
+
 # [1.2.0](https://github.com/svbeon/kontonummer/compare/v1.1.0...v1.2.0) (2020-04-12)
 
 
