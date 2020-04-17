@@ -159,9 +159,10 @@ If no argument is provided it should default to `numeric`.
 
 ```typescript
 type Format = 'numeric' | 'pretty'
+type Part = 'full' | 'sortingCode' | 'accountNumber'
 
 class Kontonummer {
-  format (format?: Format): string
+  format (format?: Format = 'numeric', part?: Part = 'full'): string
 }
 ```
 
@@ -251,16 +252,15 @@ number `AAAAAAAAA`. [[1]](#source-1)
 
 **!!NOTE!!** There exist very old Swedbank accounts without any check digit.
 There is no way to validate these account numbers. [[1]](#source-1)
-As far as I've been able to find out these accounts also "lives" under the same
-sorting codes as other accounts with a check digit, so there is no way to
-distinguish them. [[citation-needed]]()
+According to Swedbanks phone support these accounts also "lives" under the same
+sorting codes as other accounts with a check digit and they can have either a
+4-digit or a 5-digit sorting code, so there is no way to distinguish them.
+[[13]](#source-13)
 
 ##### Handelsbanken
 
-Accounts with Handelsbanken are 9 digits long according to Bankgirot.
-[[1]](#source-1) However, in some instances, notably bushiness accounts the
-account number might be shorter (I personally have examples with 8 digits)
-[[citation-needed]]()
+Accounts with Handelsbanken are 8 or 9 digits long.
+[[1]](#source-1) [[14]](#source-14)
 
 The format for these account numbers are `AAAAAAAAC`, or with separation
 for readability `AAA AAA AAC`. As the sorting code is not part of the
@@ -437,3 +437,14 @@ Claims about Danske Bank
   [[pdf]](https://www.scb.se/contentassets/8d9d985ca9c84c6e8d879cc89a8ae479/ov9999_2016a01_br_be96br1601.pdf),
   [[archived]](https://web.archive.org/web/20200412133141/https://www.scb.se/contentassets/8d9d985ca9c84c6e8d879cc89a8ae479/ov9999_2016a01_br_be96br1601.pdf),
   [index](https://www.scb.se/hitta-statistik/statistik-efter-amne/ovrigt/ovrigt/ovriga-publikationer-ej-statistik/pong/publikationer/personnummer/)
+13. <a id="source-13"></a>
+  Call with Swedbank regarding unverifiable account numbers.
+  (2020-04-17)
+  (Svante B, Interviewer)
+14. <a id="source-14"></a>
+  Vera B . (2020-04-17).
+  Handelsbanken Chat: Question regarding length of account numbers in
+  Handelsbanken.
+  (Svante B, Interviewer)
+  [[pdf]](https://swantzter.se/2020-04-17-SHB-chat.pdf)
+  [[archived]](https://web.archive.org/web/20200417111535/https://swantzter.se/2020-04-17-SHB-chat.pdf)
