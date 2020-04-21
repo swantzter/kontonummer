@@ -75,6 +75,8 @@ export default (sortingCode: string | number, accountNumber: string | number, so
       return formatter(sortingCode, accountNumber, 'SSSS, AAA AAA AAA')
     } else if (bankName === 'Nordea Plusgirot') {
       return formatter(sortingCode, accountNumber, 'SSSS, AAA AA AA-A')
+    } else if (bankName === 'Nordea') {
+      return formatter(sortingCode, accountNumber, 'SSSS, AAAAAA-AAAA')
     } else {
       return formatter(sortingCode, accountNumber, 'SSSS-S, AA AAAA AAAA')
     }
