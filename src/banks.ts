@@ -238,7 +238,7 @@ export const banks: SortingCodeInfo[] = [
     type: 2,
     comment: 2,
     ranges: [[6000, 6999]],
-    accountMinLength: 9, // TODO: Check this, I have an account number from SHB that's 8 digits
+    accountMinLength: 8,
     accountMaxLength: 9
   },
   {
@@ -277,7 +277,6 @@ export const banks: SortingCodeInfo[] = [
     bankName: 'Swedbank',
     type: 2,
     comment: 3,
-    // TODO: only use 4 digits for lookup
     ranges: [[8000, 8999]], // adding an extra 5-digit case to catch their 5 digit sorting codes
     accountMinLength: 10, // source: https://www.swedbank.se/privat/kort-och-betala/konton-for-in-och-utbetalningar/clearingnummer.html
     accountMaxLength: 11 // Allowing 11 here in case clearingnumber is sent as the first four instead of the first five
