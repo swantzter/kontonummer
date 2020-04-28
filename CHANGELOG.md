@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/svbeon/kontonummer/compare/v1.3.0...v1.4.0) (2020-04-28)
+
+
+### Features
+
+* **banks:** add newly confirmed account number min length to SHB accounts ([98627a4](https://github.com/svbeon/kontonummer/commit/98627a4744ff366e4326c9cbe3ed2480dff498ba))
+* **format:** add forgotten format for Nordea Personkonto ([d61bc92](https://github.com/svbeon/kontonummer/commit/d61bc92ec4bc364625b8f1e6bc0e16c3897e8a67))
+
 # [1.3.0](https://github.com/svbeon/kontonummer/compare/v1.2.0...v1.3.0) (2020-04-16)
 
 
