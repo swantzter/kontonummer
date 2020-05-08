@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/svbeon/kontonummer/compare/v1.4.0...v1.4.1) (2020-05-08)
+
+
+### Bug Fixes
+
+* **validate:** mod11 needs to be able to take numbers longer than 10 digits ([e8d9064](https://github.com/svbeon/kontonummer/commit/e8d90648bda9100de8a20cb9e2bb3291ae775c55)), closes [#6](https://github.com/svbeon/kontonummer/issues/6)
+
 # [1.4.0](https://github.com/svbeon/kontonummer/compare/v1.3.0...v1.4.0) (2020-04-28)
 
 
