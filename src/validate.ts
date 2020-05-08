@@ -2,7 +2,7 @@ import { SortingCodeInfo } from './banks'
 type modFunction = (number: string | number) => boolean
 
 export const mod10: modFunction = (number) => {
-  number = `${number}`.substr(-10).padStart(10, '0') // pad not strictly neccesary here, but makes it clear and means we get O(n) operations
+  number = `${number}`
 
   let len = number.length
   let bit = 1
@@ -20,7 +20,7 @@ export const mod10: modFunction = (number) => {
 }
 
 export const mod11: modFunction = (number) => {
-  number = `${number}`.substr(-10).padStart(10, '0') // pad not strictly neccesary here, but makes it clear and means we get O(n) operations
+  number = `${number}`
 
   let len = number.length
   let sum = 0
@@ -37,7 +37,7 @@ export const mod11: modFunction = (number) => {
 }
 
 export default (type: SortingCodeInfo['type'], comment: SortingCodeInfo['comment'], sortingCode: string, accountNumber: string) => {
-  // 1:1 => mod11 on 3 last of clearng + whole account number
+  // 1:1 => mod11 on 3 last of clearing + whole account number
   if (type === 1 && comment === 1) return mod11(`${sortingCode.substring(1)}${accountNumber.padStart(7, '0')}`)
   // 1:2 => mod 11 on whole clearing + whole account number
   if (type === 1 && comment === 2) return mod11(`${sortingCode}${accountNumber.padStart(7, '0')}`)
