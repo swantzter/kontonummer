@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/svbeon/kontonummer/compare/v1.4.1...v1.5.0) (2020-08-18)
+
+
+### Features
+
+* **banks:** add Northmill Bank ([9f36e24](https://github.com/svbeon/kontonummer/commit/9f36e249bd2eb15e98b8075b48730d93e1f2978e))
+
 ## [1.4.1](https://github.com/svbeon/kontonummer/compare/v1.4.0...v1.4.1) (2020-05-08)
 
 
