@@ -365,11 +365,11 @@ Claims about Danske Bank
 ## Sources
 
 1. <a id="source-1"></a>
-  Bankgirot. (2019-10-22).
+  Bankgirot. (2020-04-15).
   _Bankernas kontonummer_.
   Stockholm: Bankgirocentralen BGC AB.
   [[pdf]](https://www.bankgirot.se/globalassets/dokument/anvandarmanualer/bankernaskontonummeruppbyggnad_anvandarmanual_sv.pdf),
-  [[archived]](https://web.archive.org/web/20200412104139/https://www.bankgirot.se/globalassets/dokument/anvandarmanualer/bankernaskontonummeruppbyggnad_anvandarmanual_sv.pdf),
+  [[archived]](https://web.archive.org/web/20200818063451/https://www.bankgirot.se/globalassets/dokument/anvandarmanualer/bankernaskontonummeruppbyggnad_anvandarmanual_sv.pdf),
   [index](https://www.bankgirot.se/kundservice/handbocker/)
 2. <a id="source-2"></a>
   Svenska Bankföreningen. (2019-05-23).

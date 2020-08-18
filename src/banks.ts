@@ -23,10 +23,10 @@ export type BankName =
   'Forex Bank' | 'Handelsbanken' | 'ICA Banken' | 'IKANO Bank' |
   'JAK Medlemsbank' | 'Klarna Bank' | 'Lån & Spar Bank Sverige' | 'Landshypotek' |
   'Länsförsäkringar Bank' | 'Marginalen Bank' | 'MedMera Bank' | 'Nordax Bank' |
-  'Nordea' | 'Nordea Plusgirot' | 'Nordnet Bank' | 'Resurs Bank' |
-  'Riksgälden' | 'Santander Consumer Bank' | 'SBAB' | 'SEB' |
-  'Skandiabanken' | 'Sparbanken Syd' | 'Svea Bank' | 'Swedbank' |
-  'Ålandsbanken'
+  'Nordea' | 'Nordea Plusgirot' | 'Nordnet Bank' | 'Northmill Bank' |
+  'Resurs Bank' | 'Riksgälden' | 'Santander Consumer Bank' | 'SBAB' |
+  'SEB' | 'Skandiabanken' | 'Sparbanken Syd' | 'Svea Bank' |
+  'Swedbank' | 'Ålandsbanken'
 
 export const banks: SortingCodeInfo[] = [
   // Type 1 accounts. Always 11 digits long sortingCode included.
@@ -168,6 +168,12 @@ export const banks: SortingCodeInfo[] = [
     type: 1,
     comment: 2,
     ranges: [[9100, 9109]]
+  },
+  {
+    bankName: 'Northmill Bank',
+    type: 1,
+    comment: 2,
+    ranges: [[9750, 9759]]
   },
   {
     bankName: 'Resurs Bank',
