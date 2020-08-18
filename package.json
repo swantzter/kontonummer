@@ -2,6 +2,9 @@
   "name": "kontonummer",
   "version": "0.0.0-development",
   "description": "A validator for swedish banking numbers",
+  "author": "Svante Bengtson <svante@swantzter.se> (https://swantzter.se)",
+  "license": "MIT",
+  "homepage": "https://kontonummer.se",
   "main": "dist/src/index.js",
   "scripts": {
     "test": "BABEL_ENV=test nyc -r lcov -r text -e .ts -x test/**/* mocha -r ts-node/register -r test/babel-register.js test/**/*.test.ts",
@@ -9,8 +12,6 @@
     "build": "pika build",
     "semantic-release": "semantic-release"
   },
-  "author": "Svante Bengtson <svante@swantzter.se> (https://swantzter.se)",
-  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -69,7 +70,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/svbeon/kontonummer.git"
+    "url": "https://github.com/swantzter/kontonummer.git"
   },
   "@pika/pack": {
     "pipeline": [
