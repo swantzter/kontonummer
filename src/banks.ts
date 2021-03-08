@@ -1,4 +1,13 @@
-export type SortingCodeInfo = Type1Account | Type2Account
+export type BankName =
+  'Avanza Bank' | 'BlueStep Finans' | 'BNP Paribas SA.' | 'Citibank' |
+  'Danske Bank' | 'DNB Bank' | 'Ekobanken' | 'Erik Penser' |
+  'Forex Bank' | 'Handelsbanken' | 'ICA Banken' | 'IKANO Bank' |
+  'JAK Medlemsbank' | 'Klarna Bank' | 'Lån & Spar Bank Sverige' | 'Landshypotek' |
+  'Länsförsäkringar Bank' | 'Marginalen Bank' | 'MedMera Bank' | 'Nordax Bank' |
+  'Nordea' | 'Nordea Plusgirot' | 'Nordnet Bank' | 'Northmill Bank' |
+  'Resurs Bank' | 'Riksgälden' | 'Santander Consumer Bank' | 'SBAB' |
+  'SEB' | 'Skandiabanken' | 'Sparbanken Syd' | 'Svea Bank' |
+  'Swedbank' | 'Ålandsbanken'
 
 interface SortingCodeBase {
   bankName: BankName
@@ -17,16 +26,7 @@ export interface Type2Account extends SortingCodeBase {
   accountMaxLength?: number
 }
 
-export type BankName =
-  'Avanza Bank' | 'BlueStep Finans' | 'BNP Paribas SA.' | 'Citibank' |
-  'Danske Bank' | 'DNB Bank' | 'Ekobanken' | 'Erik Penser' |
-  'Forex Bank' | 'Handelsbanken' | 'ICA Banken' | 'IKANO Bank' |
-  'JAK Medlemsbank' | 'Klarna Bank' | 'Lån & Spar Bank Sverige' | 'Landshypotek' |
-  'Länsförsäkringar Bank' | 'Marginalen Bank' | 'MedMera Bank' | 'Nordax Bank' |
-  'Nordea' | 'Nordea Plusgirot' | 'Nordnet Bank' | 'Northmill Bank' |
-  'Resurs Bank' | 'Riksgälden' | 'Santander Consumer Bank' | 'SBAB' |
-  'SEB' | 'Skandiabanken' | 'Sparbanken Syd' | 'Svea Bank' |
-  'Swedbank' | 'Ålandsbanken'
+export type SortingCodeInfo = Type1Account | Type2Account
 
 export const banks: SortingCodeInfo[] = [
   // Type 1 accounts. Always 11 digits long sortingCode included.
