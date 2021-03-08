@@ -140,12 +140,6 @@ export const banks: SortingCodeInfo[] = [
     ranges: [[9230, 9239]]
   },
   {
-    bankName: 'MedMera Bank',
-    type: 1,
-    comment: 2,
-    ranges: [[9650, 9659]]
-  },
-  {
     bankName: 'Nordax Bank',
     type: 1,
     comment: 2,
