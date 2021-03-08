@@ -180,3 +180,9 @@ class Kontonummer {
 ## [Research](https://i.imgur.com/5wuurYD.png)
 
 **Moved** to [swantzter.se](https://swantzter.se/deep-dives/kontonummer) where I plan to publish research on other topics as well
+
+## Developing
+
+Use Commitizen `npm install -g commitizen` then `npm cz`
+
+Pushing to main will build and release a new version automatically
