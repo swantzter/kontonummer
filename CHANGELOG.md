@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/swantzter/kontonummer/compare/v1.5.0...v2.0.0) (2021-03-08)
+
+
+### Features
+
+* **banks:** remove MedMera Bank ([628e547](https://github.com/swantzter/kontonummer/commit/628e54756e32ea5199af0786df57e7b73ebe56c3))
+
+
+### BREAKING CHANGES
+
+* **banks:** MedMera Bank accounts will no longer validate
+
 # [1.5.0](https://github.com/swantzter/kontonummer/compare/v1.4.1...v1.5.0) (2020-08-18)
 
 
