@@ -51,7 +51,7 @@ describe('Kontonummer', () => {
     strictEqual(nordeaPersonnumber.accountNumber, '0006205124', 'Nordea personnumber bank account number returns correct account number')
   })
 
-  it.skip('Should verify a klarna account number', () => {
+  it('Should verify a klarna account number', () => {
     const klarna = new Kontonummer('97891111113')
 
     strictEqual(klarna.bankName, 'Klarna Bank', 'Klarna Bank bank account number returns correct bank name')
