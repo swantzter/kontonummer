@@ -19,7 +19,7 @@ with some additional goals:
 
 Some Code (c) [Jonas Persson](https://github.com/jop-io) and
 [Tobbe Lundberg](https://github.com/Tobbe) which they have gracefully released
-under a MIT license. See [LICENCE](/swantzter/kontonummer/blob/main/LICENSE)
+under a MIT license. See [LICENCE](LICENSE)
 
 This implementation is written in TypeScript but the following specification
 should be applicable to other languages as well. But some language specific
