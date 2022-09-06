@@ -1,7 +1,7 @@
 export type BankName =
   'Avanza Bank' | 'BlueStep Finans' | 'BNP Paribas SA.' | 'Citibank' |
   'Danske Bank' | 'DNB Bank' | 'Ekobanken' | 'Erik Penser' |
-  'Forex Bank' | 'Handelsbanken' | 'ICA Banken' | 'IKANO Bank' |
+  'Ferratum Bank plc' | 'Handelsbanken' | 'ICA Banken' | 'IKANO Bank' |
   'JAK Medlemsbank' | 'Klarna Bank' | 'Lån & Spar Bank Sverige' | 'Landshypotek' |
   'Länsförsäkringar Bank' | 'Marginalen Bank' | 'MedMera Bank' | 'Nordax Bank' |
   'Nordea' | 'Nordea Plusgirot' | 'Nordnet Bank' | 'Northmill Bank' |
@@ -80,10 +80,10 @@ export const banks: SortingCodeInfo[] = [
     ranges: [[9590, 9599]]
   },
   {
-    bankName: 'Forex Bank',
+    bankName: 'Ferratum Bank plc',
     type: 1,
     comment: 1,
-    ranges: [[9400, 9449]]
+    ranges: [[9070, 9079]]
   },
   {
     bankName: 'ICA Banken',
