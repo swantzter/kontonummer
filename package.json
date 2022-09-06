@@ -1,6 +1,6 @@
 {
   "name": "kontonummer",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A validator for swedish banking numbers",
   "author": "Svante Bengtson <svante@swantzter.se> (https://swantzter.se)",
   "license": "MIT",
