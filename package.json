@@ -12,6 +12,10 @@
     "require": "./dist/cjs/index.js",
     "default": "./dist/esm/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swantzter/kontonummer.git"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json",
     "build:watch": "tsc --watch -p tsconfig.production.json",
@@ -31,10 +35,6 @@
     "mocha": "^10.0.0",
     "tsx": "^3.9.0",
     "typescript": "^4.2.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/swantzter/kontonummer.git"
   },
   "keywords": [
     "banking",
