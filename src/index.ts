@@ -23,8 +23,8 @@ export default class Kontonummer {
   get comment () { return this.#comment }
   get valid () { return this.#valid }
 
-  constructor(sortingCodeAndAccountNumber: string | number, options?: InitOptions)
-  constructor(sortingCode: string | number, accountNumber: string | number, options?: InitOptions)
+  constructor (sortingCodeAndAccountNumber: string | number, options?: InitOptions)
+  constructor (sortingCode: string | number, accountNumber: string | number, options?: InitOptions)
   constructor (sortingCodeWithOrWithoutAccountNumber: string | number, accountOrOptions?: string | number | InitOptions, optionsArg?: InitOptions) {
     let accountNumber: string
     let options: InitOptions = {
@@ -81,15 +81,15 @@ export default class Kontonummer {
     return formatter(this.sortingCode, this.accountNumber, Kontonummer.getSortingCodeInfo(this.sortingCode), format)
   }
 
-  public static parse(sortingCodeAndAccountNumber: string | number, options?: InitOptions): Kontonummer
-  public static parse(sortingCode: string | number, accountNumber: string | number, options?: InitOptions): Kontonummer
+  public static parse (sortingCodeAndAccountNumber: string | number, options?: InitOptions): Kontonummer
+  public static parse (sortingCode: string | number, accountNumber: string | number, options?: InitOptions): Kontonummer
   public static parse (sortingCodeWithOrWithoutAccountNumber: string | number, accountOrOptions?: string | number | InitOptions, options?: InitOptions) {
     if (typeof accountOrOptions === 'string' || typeof accountOrOptions === 'number') return new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountOrOptions, options)
     else return new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountOrOptions)
   }
 
-  public static valid(sortingCodeAndAccountNumber: string | number): boolean
-  public static valid(sortingCode: string | number, accountNumber: string | number): boolean
+  public static valid (sortingCodeAndAccountNumber: string | number): boolean
+  public static valid (sortingCode: string | number, accountNumber: string | number): boolean
   public static valid (sortingCodeWithOrWithoutAccountNumber: string | number, accountNumber?: string | number) {
     if (accountNumber && (typeof accountNumber !== 'string' || typeof accountNumber !== 'number')) throw new KontonummerError('Kontonummer.valid() does not accept an options argument')
     try {
