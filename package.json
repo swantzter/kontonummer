@@ -5,10 +5,15 @@
   "author": "Svante Bengtson <svante@swantzter.se> (https://swantzter.se)",
   "license": "MIT",
   "homepage": "https://kontonummer.se",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js",
+    "default": "./dist/esm/index.js"
+  },
   "scripts": {
-    "build": "tsc -p tsconfig.production.json",
+    "build": "tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json",
     "build:watch": "tsc --watch -p tsconfig.production.json",
     "test": "NODE_OPTIONS='--loader tsx' mocha test/**/*.test.ts",
     "test:coverage": " c8 -r lcov -r text npm test",
