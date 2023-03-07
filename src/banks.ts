@@ -7,7 +7,7 @@ export type BankName =
   'Nordea' | 'Nordea Plusgirot' | 'Nordnet Bank' | 'Northmill Bank' |
   'Resurs Bank' | 'Riksgälden' | 'Santander Consumer Bank' | 'SBAB' |
   'SEB' | 'Skandiabanken' | 'Sparbanken Syd' | 'Svea Bank' |
-  'Swedbank' | 'Ålandsbanken'
+  'Swedbank' | 'Ålandsbanken' | 'Lunar Bank A/S'
 
 interface SortingCodeBase {
   bankName: BankName
@@ -222,6 +222,12 @@ export const banks: SortingCodeInfo[] = [
     type: 1,
     comment: 2,
     ranges: [[2300, 2399]]
+  },
+  {
+    bankName: 'Lunar Bank A/S',
+    type: 1,
+    comment: 2,
+    ranges: [[9710, 9719]]
   },
 
   // Type 2 accounts - the messy ones
