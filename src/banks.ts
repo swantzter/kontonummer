@@ -1,12 +1,12 @@
 export type BankName =
-  'Avanza Bank' | 'BlueStep Finans' | 'BNP Paribas SA.' | 'Citibank' |
-  'Danske Bank' | 'DNB Bank' | 'Ekobanken' | 'Erik Penser' |
-  'Ferratum Bank plc' | 'Handelsbanken' | 'ICA Banken' | 'IKANO Bank' |
-  'JAK Medlemsbank' | 'Klarna Bank' | 'Lån & Spar Bank Sverige' | 'Landshypotek' |
-  'Länsförsäkringar Bank' | 'Marginalen Bank' | 'MedMera Bank' | 'Nordax Bank' |
-  'Nordea' | 'Nordea Plusgirot' | 'Nordnet Bank' | 'Northmill Bank' |
-  'Resurs Bank' | 'Riksgälden' | 'Santander Consumer Bank' | 'SBAB' |
-  'SEB' | 'Skandiabanken' | 'Sparbanken Syd' | 'Svea Bank' |
+  'Aion Bank' | 'Avanza Bank' | 'BlueStep Finans' | 'BNP Paribas' |
+  'Citibank' | 'Danske Bank' | 'DNB Bank' | 'Ekobanken' | 'Erik Penser' |
+  'Handelsbanken' | 'ICA Banken' | 'IKANO Bank' | 'JAK Medlemsbank' |
+  'Klarna Bank' | 'Lån & Spar Bank Sverige' | 'Landshypotek' | 'Lunar Bank' |
+  'Länsförsäkringar Bank' | 'Marginalen Bank' | 'Multitude Bank' |
+  'Nordax Bank' | 'Nordea' | 'Nordea Plusgirot' | 'Nordnet Bank' |
+  'Northmill Bank' | 'Resurs Bank' | 'Riksgälden' | 'Santander Consumer Bank' |
+  'SBAB' | 'SEB' | 'Skandiabanken' | 'Sparbanken Syd' | 'Svea Bank' |
   'Swedbank' | 'Ålandsbanken'
 
 interface SortingCodeBase {
@@ -32,6 +32,12 @@ export const banks: SortingCodeInfo[] = [
   // Type 1 accounts. Always 11 digits long sortingCode included.
   // SSSSAAAAAAC
   {
+    bankName: 'Aion Bank',
+    type: 1,
+    comment: 1,
+    ranges: [[9580, 9589]]
+  },
+  {
     bankName: 'Avanza Bank',
     type: 1,
     comment: 2,
@@ -44,7 +50,7 @@ export const banks: SortingCodeInfo[] = [
     ranges: [[9680, 9689]]
   },
   {
-    bankName: 'BNP Paribas SA.',
+    bankName: 'BNP Paribas',
     type: 1,
     comment: 2,
     ranges: [[9470, 9479]]
@@ -80,12 +86,6 @@ export const banks: SortingCodeInfo[] = [
     ranges: [[9590, 9599]]
   },
   {
-    bankName: 'Ferratum Bank plc',
-    type: 1,
-    comment: 1,
-    ranges: [[9070, 9079]]
-  },
-  {
     bankName: 'ICA Banken',
     type: 1,
     comment: 1,
@@ -116,6 +116,12 @@ export const banks: SortingCodeInfo[] = [
     ranges: [[9390, 9399]]
   },
   {
+    bankName: 'Lunar Bank',
+    type: 1,
+    comment: 2,
+    ranges: [[9710, 9719]]
+  },
+  {
     bankName: 'Lån & Spar Bank Sverige',
     type: 1,
     comment: 1,
@@ -138,6 +144,12 @@ export const banks: SortingCodeInfo[] = [
     type: 1,
     comment: 1,
     ranges: [[9230, 9239]]
+  },
+  {
+    bankName: 'Multitude Bank',
+    type: 1,
+    comment: 1,
+    ranges: [[9070, 9079]]
   },
   {
     bankName: 'Nordax Bank',

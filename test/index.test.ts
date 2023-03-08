@@ -3,12 +3,12 @@ import Kontonummer from '../src/index'
 import { strictEqual, throws } from 'assert'
 
 describe('Kontonummer', () => {
-  it('Should validate a Ferratum Bank account', () => {
+  it('Should validate a Multitude Bank account', () => {
     const forex = new Kontonummer('9071, 417 23 83')
 
-    strictEqual(forex.bankName, 'Ferratum Bank plc', 'Ferratum Bank plc bank account number returns correct bank name')
-    strictEqual(forex.sortingCode, '9071', 'Ferratum Bank plc bank account number returns correct clearing number')
-    strictEqual(forex.accountNumber, '4172383', 'Ferratum Bank plc bank account number returns correct account number')
+    strictEqual(forex.bankName, 'Multitude Bank', 'Multitude Bank bank account number returns correct bank name')
+    strictEqual(forex.sortingCode, '9071', 'Multitude Bank bank account number returns correct clearing number')
+    strictEqual(forex.accountNumber, '4172383', 'Multitude Bank bank account number returns correct account number')
   })
 
   it('Should validate a Handelsbanken account', () => {
