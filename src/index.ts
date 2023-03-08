@@ -1,7 +1,7 @@
 import getSortingCodeInfo from './banks'
 import { KontonummerError } from './errors'
 import validateCheckDigit, { mod10 } from './validate'
-import formatter, { Format } from './format'
+import formatter, { type Format } from './format'
 
 import type { BankName, SortingCodeInfo } from './banks'
 interface InitOptions {
