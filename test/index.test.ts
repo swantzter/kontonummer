@@ -1,6 +1,6 @@
 /* eslint-env mocha */
-import Kontonummer from '../src/index'
-import { strictEqual, throws } from 'assert'
+import Kontonummer from '../src/index.js'
+import { strictEqual, throws } from 'node:assert'
 
 describe('Kontonummer', () => {
   it('Should validate a Multitude Bank account', () => {

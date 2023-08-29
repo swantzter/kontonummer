@@ -1,9 +1,9 @@
-import getSortingCodeInfo from './banks'
-import { KontonummerError } from './errors'
-import validateCheckDigit, { mod10 } from './validate'
-import formatter, { type Format } from './format'
+import getSortingCodeInfo from './banks.js'
+import { KontonummerError } from './errors.js'
+import validateCheckDigit, { mod10 } from './validate.js'
+import formatter, { type Format } from './format.js'
 
-import type { BankName, SortingCodeInfo } from './banks'
+import type { BankName, SortingCodeInfo } from './banks.js'
 interface InitOptions {
   mode: 'strict' | 'semi' | 'lax'
 }

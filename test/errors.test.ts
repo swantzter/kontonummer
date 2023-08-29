@@ -1,6 +1,6 @@
 /* eslint-env mocha */
-import assert from 'assert'
-import { KontonummerError } from '../src/errors'
+import assert from 'node:assert'
+import { KontonummerError } from '../src/errors.js'
 
 describe('KontonummerError', () => {
   it('Should throw a named error', () => {

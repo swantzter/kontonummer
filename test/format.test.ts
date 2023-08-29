@@ -1,6 +1,6 @@
 /* eslint-env mocha */
-import format, { formatter } from '../src/format'
-import { strictEqual } from 'assert'
+import format, { formatter } from '../src/format.js'
+import { strictEqual } from 'node:assert'
 
 describe('formatter', () => {
   const tests: Array<[string, string, string, boolean, string]> = [

@@ -1,4 +1,4 @@
-import type { SortingCodeInfo, Type2Account } from './banks'
+import type { SortingCodeInfo, Type2Account } from './banks.js'
 
 export type Format = 'numeric' | 'pretty'
 

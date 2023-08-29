@@ -1,4 +1,4 @@
-import { type SortingCodeInfo } from './banks'
+import { type SortingCodeInfo } from './banks.js'
 type modFunction = (number: string | number) => boolean
 
 export const mod10: modFunction = (number) => {
