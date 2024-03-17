@@ -4,7 +4,7 @@ export type BankName =
   'Handelsbanken' | 'ICA Banken' | 'IKANO Bank' | 'JAK Medlemsbank' |
   'Klarna Bank' | 'Lån & Spar Bank Sverige' | 'Landshypotek' | 'Lunar Bank' |
   'Länsförsäkringar Bank' | 'Marginalen Bank' | 'Multitude Bank' |
-  'Nordax Bank' | 'Nordea' | 'Nordea Plusgirot' | 'Nordnet Bank' |
+  'NOBA Bank Group AB' | 'Nordea' | 'Nordea Plusgirot' | 'Nordnet Bank' |
   'Northmill Bank' | 'Resurs Bank' | 'Riksgälden' | 'Santander Consumer Bank' |
   'SBAB' | 'SEB' | 'Skandiabanken' | 'Sparbanken Syd' | 'Svea Bank' |
   'Swedbank' | 'Ålandsbanken'
@@ -152,7 +152,7 @@ export const banks: SortingCodeInfo[] = [
     ranges: [[9070, 9079]]
   },
   {
-    bankName: 'Nordax Bank',
+    bankName: 'NOBA Bank Group AB',
     type: 1,
     comment: 2,
     ranges: [[9640, 9649]]
