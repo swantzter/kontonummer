@@ -1,7 +1,7 @@
 # Kontonummer
 
-![test](https://github.com/swantzter/kontonummer/workflows/test/badge.svg)
-![release](https://github.com/swantzter/kontonummer/workflows/release/badge.svg)
+[![QA](https://github.com/swantzter/kontonummer/actions/workflows/qa.yml/badge.svg)](https://github.com/swantzter/kontonummer/actions/workflows/qa.yml)
+[![Publish to NPM and GCR](https://github.com/swantzter/kontonummer/actions/workflows/release.yml/badge.svg)](https://github.com/swantzter/kontonummer/actions/workflows/release.yml)
 [![codecov](https://codecov.io/gh/swantzter/kontonummer/branch/main/graph/badge.svg)](https://codecov.io/gh/swantzter/kontonummer)
 
 > [!IMPORTANT]
