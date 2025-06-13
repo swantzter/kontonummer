@@ -5,5 +5,5 @@ module.exports = {
   forbidOnly: !!process.env.CI,
   forbidPending: !!process.env.CI,
   exit: true,
-  extension: ['test.ts']
+  extension: ['test.ts'],
 }

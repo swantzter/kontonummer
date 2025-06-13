@@ -24,7 +24,8 @@ export const formatter: FormatFn = (sortingCode, accountNumber, mask, pad = fals
     if (sortingCodeMask[idx] === 'S' || sortingCodeMask[idx] === undefined) {
       sortingCodeResult.push(sortingCodeChars.shift() ?? '')
     } else {
-      sortingCodeResult.push(sortingCodeMask[idx])
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      sortingCodeResult.push(sortingCodeMask[idx]!)
     }
 
     if (sortingCodeChars.length === 0) break
@@ -39,7 +40,8 @@ export const formatter: FormatFn = (sortingCode, accountNumber, mask, pad = fals
     if (accountNumberMask[idx] === 'A') {
       accountNumberResult.unshift(accountNumberChars.pop() ?? (pad ? '0' : ''))
     } else {
-      accountNumberResult.unshift(accountNumberMask[idx])
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      accountNumberResult.unshift(accountNumberMask[idx]!)
     }
 
     // if we have more account number than we have mask we just dump it at the start
@@ -50,6 +52,7 @@ export const formatter: FormatFn = (sortingCode, accountNumber, mask, pad = fals
     }
 
     if (accountNumberChars.length === 0 && !pad) {
+      // eslint-disable-next-line @typescript-eslint/no-misused-spread
       accountNumberResult.unshift(...accountNumberMask.slice(0, accountNumberMask.indexOf('A')))
       break
     }
@@ -59,7 +62,9 @@ export const formatter: FormatFn = (sortingCode, accountNumber, mask, pad = fals
 }
 
 export default (sortingCode: string | number, accountNumber: string | number, sortingCodeInfo: SortingCodeInfo, format: Format = 'numeric') => {
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   sortingCode = `${sortingCode ?? ''}`
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   accountNumber = `${accountNumber ?? ''}`
 
   const { bankName, type } = sortingCodeInfo

@@ -62,14 +62,14 @@ describe('Kontonummer', () => {
   it('Should throw for an invalid account number', () => {
     throws(() => new Kontonummer('123456789'), {
       name: 'KontonummerError',
-      message: 'Invalid account number'
+      message: 'Invalid account number',
     })
   })
 
   it('Should throw if the check digit is invaluid', () => {
     throws(() => new Kontonummer('6789123456788'), {
       name: 'KontonummerError',
-      message: 'Invalid account number'
+      message: 'Invalid account number',
     })
   })
 
@@ -77,7 +77,7 @@ describe('Kontonummer', () => {
     // Same account number as 'swedbank5' above, but different clearing number
     throws(() => new Kontonummer('8424-1,983 189 224-6'), {
       name: 'KontonummerError',
-      message: 'Invalid sorting code'
+      message: 'Invalid sorting code',
     })
   })
 })

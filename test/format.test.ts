@@ -3,7 +3,7 @@ import format, { formatter } from '../src/format.js'
 import { strictEqual } from 'node:assert'
 
 describe('formatter', () => {
-  const tests: Array<[string, string, string, boolean, string]> = [
+  const tests: [string, string, string, boolean, string][] = [
     ['1111', '1122233', 'SSSS AA AAA AA', true, '1111 11 222 33'],
     ['1111', '122233', 'SSSS AA AAA AA', true, '1111 01 222 33'],
     ['1111', '122233', 'SSSS AA AAA AA', false, '1111 1 222 33'],
@@ -28,7 +28,7 @@ describe('formatter', () => {
 
     ['1111', '1122334444', 'SSSS, AAAAAA-AAAA', false, '1111, 112233-4444'],
 
-    ['1111', '123456', 'SSSS, A-A', false, '1111, 12345-6']
+    ['1111', '123456', 'SSSS, A-A', false, '1111, 12345-6'],
   ]
 
   for (const [sortingCode, accountNumber, mask, pad, expected] of tests) {
@@ -46,7 +46,7 @@ describe('format', () => {
       bankName: 'Avanza Bank',
       type: 1,
       comment: 2,
-      ranges: [[9550, 9569]]
+      ranges: [[9550, 9569]],
     })
 
     strictEqual(formatted, '11111234567')
@@ -57,7 +57,7 @@ describe('format', () => {
       bankName: 'Avanza Bank',
       type: 1,
       comment: 2,
-      ranges: [[9550, 9569]]
+      ranges: [[9550, 9569]],
     })
 
     strictEqual(formatted, '11110034567')
@@ -68,7 +68,7 @@ describe('format', () => {
       bankName: 'Avanza Bank',
       type: 1,
       comment: 2,
-      ranges: [[9550, 9569]]
+      ranges: [[9550, 9569]],
     })
 
     strictEqual(formatted, '111111234567')
@@ -79,7 +79,7 @@ describe('format', () => {
       bankName: 'Swedbank',
       type: 1,
       comment: 2,
-      ranges: [[9550, 9569]]
+      ranges: [[9550, 9569]],
     }, 'pretty')
 
     strictEqual(formatted, '1111-12-34567')
@@ -90,7 +90,7 @@ describe('format', () => {
       bankName: 'Danske Bank',
       type: 1,
       comment: 2,
-      ranges: [[9550, 9569]]
+      ranges: [[9550, 9569]],
     }, 'pretty')
 
     strictEqual(formatted, '1111 12 345 67')
@@ -101,7 +101,7 @@ describe('format', () => {
       bankName: 'Swedbank',
       type: 2,
       comment: 2,
-      ranges: [[9550, 9569]]
+      ranges: [[9550, 9569]],
     }, 'pretty')
 
     strictEqual(formatted, '1111-1, 123 456 789-0')
@@ -112,7 +112,7 @@ describe('format', () => {
       bankName: 'Handelsbanken',
       type: 2,
       comment: 2,
-      ranges: [[9550, 9569]]
+      ranges: [[9550, 9569]],
     }, 'pretty')
 
     strictEqual(formatted, '1111, 123 456 789')
@@ -123,7 +123,7 @@ describe('format', () => {
       bankName: 'Handelsbanken',
       type: 2,
       comment: 2,
-      ranges: [[9550, 9569]]
+      ranges: [[9550, 9569]],
     }, 'pretty')
 
     strictEqual(formatted, '1111, 23 456 789')
@@ -134,7 +134,7 @@ describe('format', () => {
       bankName: 'Nordea Plusgirot',
       type: 2,
       comment: 2,
-      ranges: [[9550, 9569]]
+      ranges: [[9550, 9569]],
     }, 'pretty')
 
     strictEqual(formatted, '1111, 1-2')
@@ -145,7 +145,7 @@ describe('format', () => {
       bankName: 'Nordea Plusgirot',
       type: 2,
       comment: 2,
-      ranges: [[9550, 9569]]
+      ranges: [[9550, 9569]],
     }, 'pretty')
 
     strictEqual(formatted, '1111, 1 23-4')
@@ -156,7 +156,7 @@ describe('format', () => {
       bankName: 'Nordea Plusgirot',
       type: 2,
       comment: 2,
-      ranges: [[9550, 9569]]
+      ranges: [[9550, 9569]],
     }, 'pretty')
 
     strictEqual(formatted, '1111, 123 45 67-8')
@@ -167,7 +167,7 @@ describe('format', () => {
       bankName: 'Danske Bank',
       type: 2,
       comment: 2,
-      ranges: [[9550, 9569]]
+      ranges: [[9550, 9569]],
     }, 'pretty')
 
     strictEqual(formatted, '1111, 12 3456 7890')

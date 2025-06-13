@@ -10,10 +10,11 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "noUncheckedIndexedAccess": true,
     "lib": [
       "es2021"
     ],
-    "skipLibCheck": true
+    "skipLibCheck": true,
   },
   "exclude": [
     "dist",

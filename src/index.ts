@@ -28,7 +28,7 @@ export default class Kontonummer {
   constructor (sortingCodeWithOrWithoutAccountNumber: string | number, accountOrOptions?: string | number | InitOptions, optionsArg?: InitOptions) {
     let accountNumber: string
     let options: InitOptions = {
-      mode: 'strict'
+      mode: 'strict',
     }
 
     // parse params
@@ -89,6 +89,7 @@ export default class Kontonummer {
   }
 
   public static valid (sortingCodeAndAccountNumber: string | number): boolean
+  // eslint-disable-next-line @typescript-eslint/unified-signatures
   public static valid (sortingCode: string | number, accountNumber: string | number): boolean
   public static valid (sortingCodeWithOrWithoutAccountNumber: string | number, accountNumber?: string | number) {
     if (accountNumber && (typeof accountNumber !== 'string' || typeof accountNumber !== 'number')) throw new KontonummerError('Kontonummer.valid() does not accept an options argument')
@@ -114,7 +115,7 @@ export default class Kontonummer {
       accountNumber: this.accountNumber,
       type: this.type,
       comment: this.comment,
-      valid: this.valid
+      valid: this.valid,
     }
   }
 
@@ -123,5 +124,5 @@ export default class Kontonummer {
   }
 }
 
-export const parse = Kontonummer.parse
-export const valid = Kontonummer.valid
+export const parse = Kontonummer.parse.bind(Kontonummer)
+export const valid = Kontonummer.valid.bind(Kontonummer)
