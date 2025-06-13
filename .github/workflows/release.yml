@@ -13,10 +13,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 16
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 24
           cache: npm
       - run: npm ci --prefer-offline
       - run: npm t
@@ -28,7 +27,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 24
           cache: npm
           registry-url: https://registry.npmjs.org/
       - run: npm ci --prefer-offline
@@ -43,7 +42,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 24
           cache: npm
           registry-url: https://npm.pkg.github.com/
       - run: npm ci --prefer-offline
