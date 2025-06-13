@@ -1,9 +1,13 @@
 # Kontonummer
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 ![test](https://github.com/swantzter/kontonummer/workflows/test/badge.svg)
 ![release](https://github.com/swantzter/kontonummer/workflows/release/badge.svg)
 [![codecov](https://codecov.io/gh/swantzter/kontonummer/branch/main/graph/badge.svg)](https://codecov.io/gh/swantzter/kontonummer)
+
+> [!IMPORTANT]
+> Currently implements the 2024-02-22 version of the
+> [Bank Account Numbers in Swedish Banks](https://www.bankgirot.se/globalassets/dokument/anvandarmanualer/bankernaskontonummeruppbyggnad_anvandarmanual_sv.pdf)
+> specification from Bankgirot.
 
 This is a reimagination of [jop-io/kontonummer.js](https://github.com/jop-io/kontonummer.js)
 with some additional goals:
