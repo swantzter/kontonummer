@@ -5,6 +5,15 @@ import formatter, { type Format } from './format.js'
 
 import type { BankName, SortingCodeInfo } from './banks.js'
 interface InitOptions {
+  /**
+   * - `strict` validates sorting code, account number length and account
+   *   number check digit.
+   * - `semi` performs strict checks for type 1 account numbers (4+7) but lax
+   *   checks for type 2 account numbers.
+   * - `lax` does not throw if the check digit of the account number cannot be
+   *   validated. Instead, sets the `valid` property to false if the check
+   *   digit or length is invalid.
+   */
   mode: 'strict' | 'semi' | 'lax'
 }
 
@@ -63,10 +72,17 @@ export default class Kontonummer {
 
     const bank = Kontonummer.getSortingCodeInfo(sortingCode)
 
-    const valid = validateCheckDigit(bank.type, bank.comment, sortingCode, accountNumber)
+    const accountMaxLength = bank.type === 2 ? bank.accountMaxLength ?? 7 : 7
+    const accountMinLength = bank.type === 2 ? bank.accountMinLength ?? 2 : (typeof accountOrOptions === 'object' ? 7 : 2)
+    const lengthValid = accountNumber.length <= accountMaxLength && accountNumber.length >= accountMinLength
 
-    if (!valid && options.mode === 'strict') throw new KontonummerError('Invalid account number')
-    if (!valid && bank.type === 1 && options.mode === 'semi') throw new KontonummerError('Invalid account number')
+    if (!lengthValid && options.mode === 'strict') throw new KontonummerError('Invalid account number')
+    if (!lengthValid && bank.type === 1 && options.mode === 'semi') throw new KontonummerError('Invalid account number')
+
+    const checksumValid = validateCheckDigit(bank.type, bank.comment, sortingCode, accountNumber)
+
+    if (!checksumValid && options.mode === 'strict') throw new KontonummerError('Invalid account number')
+    if (!checksumValid && bank.type === 1 && options.mode === 'semi') throw new KontonummerError('Invalid account number')
 
     this.#bankName = bank.bankName
     this.#type = bank.type
@@ -74,7 +90,7 @@ export default class Kontonummer {
 
     this.#sortingCode = sortingCode
     this.#accountNumber = accountNumber
-    this.#valid = valid
+    this.#valid = checksumValid && lengthValid
   }
 
   format (format: Format) {

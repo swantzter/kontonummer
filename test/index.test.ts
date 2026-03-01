@@ -66,14 +66,21 @@ describe('Kontonummer', () => {
     })
   })
 
-  it('Should throw if the check digit is invaluid', () => {
+  it('Should throw if the check digit is invalid', () => {
     throws(() => new Kontonummer('6789123456788'), {
       name: 'KontonummerError',
       message: 'Invalid account number',
     })
   })
 
-  it('Should throw if the check digit on a 5 digit sorting code ins invalid', () => {
+  it('Should throw if a type 1 account is provided as a single string of incorrect length', () => {
+    throws(() => new Kontonummer('512200', { mode: 'strict' }), {
+      name: 'KontonummerError',
+      message: 'Invalid account number',
+    })
+  })
+
+  it('Should throw if the check digit on a 5 digit sorting code is invalid', () => {
     // Same account number as 'swedbank5' above, but different clearing number
     throws(() => new Kontonummer('8424-1,983 189 224-6'), {
       name: 'KontonummerError',
