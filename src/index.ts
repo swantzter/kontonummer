@@ -108,7 +108,7 @@ export default class Kontonummer {
   // eslint-disable-next-line @typescript-eslint/unified-signatures
   public static valid (sortingCode: string | number, accountNumber: string | number): boolean
   public static valid (sortingCodeWithOrWithoutAccountNumber: string | number, accountNumber?: string | number) {
-    if (accountNumber && (typeof accountNumber !== 'string' || typeof accountNumber !== 'number')) throw new KontonummerError('Kontonummer.valid() does not accept an options argument')
+    if (accountNumber && !(typeof accountNumber === 'string' || typeof accountNumber === 'number')) throw new KontonummerError('Kontonummer.valid() does not accept an options argument')
     try {
       if (accountNumber) new Kontonummer(sortingCodeWithOrWithoutAccountNumber, accountNumber) // eslint-disable-line no-new
       else new Kontonummer(sortingCodeWithOrWithoutAccountNumber) // eslint-disable-line no-new
