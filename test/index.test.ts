@@ -1,4 +1,3 @@
-/* eslint-env mocha */
 import Kontonummer from '../src/index.js'
 import { strictEqual, throws } from 'node:assert'
 

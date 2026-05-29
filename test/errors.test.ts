@@ -1,4 +1,3 @@
-/* eslint-env mocha */
 import assert from 'node:assert'
 import { KontonummerError } from '../src/errors.js'
 

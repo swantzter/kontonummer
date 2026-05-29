@@ -1,6 +1,7 @@
 import neostandard, { resolveIgnoresFromGitignore } from 'neostandard'
 import eslint from '@eslint/js'
 import tseslint from 'typescript-eslint'
+import globals from 'globals'
 
 export default [
   ...neostandard({
@@ -17,6 +18,7 @@ export default [
       parserOptions: {
         projectService: {
           allowDefaultProject: ['*.js', '.*.js', '*.mjs'],
+          defaultProject: 'tsconfig.json',
         },
         tsconfigRootDir: process.cwd(),
       },
@@ -49,6 +51,11 @@ export default [
   {
     name: 'swantzter/tests',
     files: ['**/*.test.ts', '**/*.test.js'],
+    languageOptions: {
+      globals: {
+        ...globals.mocha,
+      },
+    },
     rules: {
       '@typescript-eslint/ban-ts-comment': ['error', {
         'ts-expect-error': false,

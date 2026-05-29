@@ -1,4 +1,3 @@
-/* eslint-env mocha */
 import format, { formatter } from '../src/format.js'
 import { strictEqual } from 'node:assert'
 
