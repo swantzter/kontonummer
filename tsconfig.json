@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "node16",
+    "module": "nodenext",
     "declaration": true,
     "sourceMap": true,
     "outDir": "./dist",
     "strict": true,
     "noImplicitAny": true,
-    "moduleResolution": "node16",
+    "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "noUncheckedIndexedAccess": true,
