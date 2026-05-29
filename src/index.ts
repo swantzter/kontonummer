@@ -9,7 +9,8 @@ interface InitOptions {
    * - `strict` validates sorting code, account number length and account
    *   number check digit.
    * - `semi` performs strict checks for type 1 account numbers (4+7) but lax
-   *   checks for type 2 account numbers.
+   *   checks for type 2 account numbers. Account numbers that are valid if
+   *   padded are also considered valid.
    * - `lax` does not throw if the check digit of the account number cannot be
    *   validated. Instead, sets the `valid` property to false if the check
    *   digit or length is invalid.
@@ -90,7 +91,7 @@ export default class Kontonummer {
 
     this.#sortingCode = sortingCode
     this.#accountNumber = accountNumber
-    this.#valid = checksumValid && lengthValid
+    this.#valid = checksumValid && (options.mode === 'strict' ? lengthValid : true)
   }
 
   format (format: Format) {

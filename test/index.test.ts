@@ -80,6 +80,18 @@ describe('Kontonummer', () => {
     })
   })
 
+  it('Should treat account numbers needing padding as invalid in strict mode', () => {
+    throws(() => new Kontonummer('5122', '0', { mode: 'strict' }), {
+      name: 'KontonummerError',
+      message: 'Invalid account number',
+    })
+  })
+
+  it('Should treat account numbers needing padding as valid in semi mode', () => {
+    const kontonummer = new Kontonummer('5122', '00', { mode: 'semi' })
+    strictEqual(kontonummer.valid, true, 'Account number with padding is valid in semi mode')
+  })
+
   it('Should throw if the check digit on a 5 digit sorting code is invalid', () => {
     // Same account number as 'swedbank5' above, but different clearing number
     throws(() => new Kontonummer('8424-1,983 189 224-6'), {
